@@ -13,9 +13,24 @@
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
 
+		<style>/* Removes Mobile Highlight */ *{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}</style>
+			
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		
+		
+		<script type="text/javascript" src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>
+		<script type="text/javascript" src=" http://code.createjs.com/tweenjs-0.4.0.min.js"></script>
+		<script type="text/javascript" src="http://code.createjs.com/preloadjs-0.2.0.min.js"></script>
+		<script type="text/javascript" src="js/soundjs/SoundJS.js"></script>
+		<script type="text/javascript" src="js/soundjs/HTMLAudioPlugin.js"></script>
+		<script type="text/javascript" src="js/swfobject.js"></script>
+		<script type="text/javascript" src="js/soundjs/FlashPlugin.js"></script>
+		<script type="text/javascript" src="http://code.createjs.com/movieclip-0.6.0.min.js "></script>
+		<script type="text/javascript" src="js/greensock/TweenMax.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/core.js"></script>
 	</head>
 
 	<body>
@@ -33,7 +48,9 @@
 			</nav>
 
 			<div>
-
+				<body onload="main();">
+					<canvas id="TetrisStage" width="480" height="320"></canvas>
+				</body>
 			</div>
 
 			<footer>
@@ -43,5 +60,5 @@
 			</footer>
 		</div>
 	</body>
-	<script src="http://code.createjs.com/easeljs-0.6.0.min.js"></script>
+	
 </html>
