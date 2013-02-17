@@ -1,4 +1,6 @@
 var LOG = false;
+var CANVAS_WIDTH = 640;
+var CANVAS_HEIGHT = 960;
 var canvas;
 var stage;
 
@@ -12,13 +14,24 @@ var manifest;
 var totalLoaded = 0;
 
 $(document).ready(function(){
+	//Prevent scrolling
+	document.ontouchstart = function(e){ 
+	    e.preventDefault(); 
+	}
+	
 	main();
 });
 
 function main() {
 	canvas = document.getElementById("TetrisCanvas");
-	canvas.width = $("#TetrisCanvasContainer").width();
-	canvas.height = $("#TetrisCanvasContainer").height();
+	
+	canvas.width = CANVAS_WIDTH;
+	canvas.height = CANVAS_HEIGHT;
+	var factor = 1 / window.devicePixelRatio;
+	
+	canvas.style.width = canvas.width * factor + "px";
+	canvas.style.height = canvas.height * factor + "px";
+	
 	stage = new createjs.Stage(canvas);
 	stage.addEventListener("stagemouseup", handleStageMouseUp);
 	

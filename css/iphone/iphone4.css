@@ -1,1 +1,3 @@
-#TetrisCanvasContainer { width:640px; height:920px }
+* { margin: 0; padding: 0; }
+html, body { height: 100%; width: 100%; }
+canvas { display: block; }

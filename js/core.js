@@ -1,4 +1,6 @@
 var LOG = false;
+var CANVAS_WIDTH = 800;
+var CANVAS_HEIGHT = 600;
 var canvas;
 var stage;
 
@@ -17,8 +19,13 @@ $(document).ready(function(){
 
 function main() {
 	canvas = document.getElementById("TetrisCanvas");
-	canvas.width = $("#TetrisCanvasContainer").width();
-	canvas.height = $("#TetrisCanvasContainer").height();
+	canvas.width = CANVAS_WIDTH;
+	canvas.height = CANVAS_HEIGHT;
+	var factor = 1 / window.devicePixelRatio;
+	if(factor == undefined) factor = 1;
+	canvas.style.width = canvas.width * factor;
+	canvas.style.height = canvas.height * factor;
+	
 	stage = new createjs.Stage(canvas);
 	stage.addEventListener("stagemouseup", handleStageMouseUp);
 	
